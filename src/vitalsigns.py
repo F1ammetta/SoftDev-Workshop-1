@@ -4,8 +4,8 @@ class VitalSigns():
     Class that represents the vital signs of a patient.
     '''
 
-    def __init__(self, temperature=36, blood_pressure=120, blood_saturation=95,
-                 respiratory_rate=12):
+    def __init__(self, temperature: float = 36, blood_pressure: float = 120,
+                 blood_saturation: float = 95, respiratory_rate: float = 12):
         '''
         Constructor of the VitalSigns class.
 
@@ -33,7 +33,7 @@ class VitalSigns():
         return self.__temperature
 
     @temperature.setter
-    def temperature(self, value):
+    def temperature(self, value: float):
         '''
         Sets the temperature of the patient.
         :param value: Temperature of the patient in °C.
@@ -51,7 +51,7 @@ class VitalSigns():
         return self.__blood_pressure
 
     @blood_pressure.setter
-    def blood_pressure(self, value):
+    def blood_pressure(self, value: float):
         '''
         Sets the blood pressure of the patient.
         :param value: Blood pressure of the patient in mmHg.
@@ -69,7 +69,7 @@ class VitalSigns():
         return self.__respiratory_rate
 
     @respiratory_rate.setter
-    def respiratory_rate(self, value):
+    def respiratory_rate(self, value: float):
         '''
         Sets the respiratory rate of the patient.
         :param value: Respiratory rate of the patient.
@@ -87,7 +87,7 @@ class VitalSigns():
         return self.__blood_saturation
 
     @blood_saturation.setter
-    def blood_saturation(self, value):
+    def blood_saturation(self, value: float):
         '''
         Sets the saturation of the patient.
         :param value: Saturation of the patient in % of oxygen.
