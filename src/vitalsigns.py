@@ -23,6 +23,12 @@ class VitalSigns():
         self.__respiratory_rate = respiratory_rate
         self.__blood_saturation = blood_saturation
 
+    def __str__(self):
+        return f''' {{ Temperature: {self.__temperature} °C
+                Blood pressure: {self.__blood_pressure} mmHg
+                Respiratory rate: {self.__respiratory_rate} breaths per minute
+                Blood saturation: {self.__blood_saturation} % }}'''
+
     @property
     def temperature(self):
         '''
