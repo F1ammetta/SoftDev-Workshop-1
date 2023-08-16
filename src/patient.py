@@ -3,12 +3,12 @@ from vitalsigns import VitalSigns
 
 class Patient():
 
-    def __init__(self, name="", birthdate="", id=0,
-                 vital_signs=VitalSigns(),
-                 evolution_notes=[],
-                 diagnostic_images=[],
-                 lab_results=[],
-                 prescriptions=[]):
+    def __init__(self, name: str = "", birthdate: str = "", id: int = 0,
+                 vital_signs: VitalSigns = VitalSigns(),
+                 evolution_notes: list = [],
+                 diagnostic_images: list = [],
+                 lab_results: list = [],
+                 prescriptions: list = []):
         '''
         Constructor of the Patient class
 
@@ -36,6 +36,15 @@ class Patient():
         self.__lab_results = lab_results
         self.__prescriptions = prescriptions
 
+    def __str__(self):
+        '''
+        Returns the string representation of the patient
+
+        :return: string representation of the patient
+        :rtype: str
+        '''
+        return f'Patient: {self.__name}'
+
     @property
     def name(self):
         '''
@@ -47,7 +56,7 @@ class Patient():
         return self.__name
 
     @name.setter
-    def name(self, name):
+    def name(self, name: str):
         '''
         Sets the name attribute
 
@@ -67,7 +76,7 @@ class Patient():
         return self.__birthdate
 
     @birthdate.setter
-    def birthdate(self, birthdate):
+    def birthdate(self, birthdate: str):
         '''
         Sets the birthdate attribute
 
@@ -87,7 +96,7 @@ class Patient():
         return self.__id
 
     @id.setter
-    def id(self, id):
+    def id(self, id: int):
         '''
         Sets the id attribute
 
@@ -107,7 +116,7 @@ class Patient():
         return self.__vital_signs
 
     @vital_signs.setter
-    def vital_signs(self, vital_signs):
+    def vital_signs(self, vital_signs: VitalSigns):
         '''
         Sets the vital_signs attribute
 
@@ -127,7 +136,7 @@ class Patient():
         return self.__evolution_notes
 
     @evolution_notes.setter
-    def evolution_notes(self, evolution_notes):
+    def evolution_notes(self, evolution_notes: list):
         '''
         Sets the evolution_notes attribute
 
@@ -147,7 +156,7 @@ class Patient():
         return self.__diagnostic_images
 
     @diagnostic_images.setter
-    def diagnostic_images(self, diagnostic_images):
+    def diagnostic_images(self, diagnostic_images: list):
         '''
         Sets the diagnostic_images attribute
 
@@ -167,7 +176,7 @@ class Patient():
         return self.__lab_results
 
     @lab_results.setter
-    def lab_results(self, lab_results):
+    def lab_results(self, lab_results: list):
         '''
         Sets the lab_results attribute
 
@@ -187,7 +196,7 @@ class Patient():
         return self.__prescriptions
 
     @prescriptions.setter
-    def prescriptions(self, prescriptions):
+    def prescriptions(self, prescriptions: list):
         '''
         Sets the prescriptions attribute
 
