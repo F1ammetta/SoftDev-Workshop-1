@@ -1,10 +1,12 @@
 from vitalsigns import VitalSigns
+from clinical import ClinicalRecords
 
 
 class Patient():
 
     def __init__(self, name: str = "", birthdate: str = "", id: int = 0,
-                 vital_signs: VitalSigns = VitalSigns()):
+                 vital_signs: VitalSigns = VitalSigns(),
+                 clinical_records: ClinicalRecords = ClinicalRecords()):
         '''
         Constructor of the Patient class
 
@@ -16,11 +18,14 @@ class Patient():
         :type id: int
         :param vital_signs: vital signs of the patient
         :type vital_signs: VitalSigns
+        :param clinical_records: clinical records of the patient
+        :type clinical_records: ClinicalRecords
         '''
         self.__name = name
         self.__birthdate = birthdate
         self.__id = id
         self.__vital_signs = vital_signs
+        self.__clinical_records = clinical_records
 
     def __str__(self):
         '''
@@ -31,18 +36,18 @@ class Patient():
         '''
         return f'''Patient: {self.__name}
 Vital Signs: {self.__vital_signs}
-Evolution Notes: {self.__evolution_notes}
-Diagnostic Images: {self.__diagnostic_images}
-Lab Results: {self.__lab_results}
-Prescriptions: {self.__prescriptions}\n'''
+Evolution Notes: {self.__clinical_records.evolution_notes}
+Lab Results: {self.__clinical_records.lab_results}
+Diagnostic Images: {self.__clinical_records.diagnostic_images}
+Prescriptions: {self.__clinical_records.prescriptions}'''
 
     @ property
     def name(self):
         '''
         Returns the name attribute
 
-        :return: name of the patient
-        :rtype: str
+        : return: name of the patient
+        : rtype: str
         '''
         return self.__name
 
@@ -51,8 +56,8 @@ Prescriptions: {self.__prescriptions}\n'''
         '''
         Sets the name attribute
 
-        :param name: name of the patient
-        :type name: str
+        : param name: name of the patient
+        : type name: str
         '''
         self.__name = name
 
@@ -61,8 +66,8 @@ Prescriptions: {self.__prescriptions}\n'''
         '''
         Returns the birthdate attribute
 
-        :return: birthdate of the patient
-        :rtype: str
+        : return: birthdate of the patient
+        : rtype: str
         '''
         return self.__birthdate
 
@@ -71,8 +76,8 @@ Prescriptions: {self.__prescriptions}\n'''
         '''
         Sets the birthdate attribute
 
-        :param birthdate: birthdate of the patient
-        :type birthdate: str
+        : param birthdate: birthdate of the patient
+        : type birthdate: str
         '''
         self.__birthdate = birthdate
 
@@ -81,8 +86,8 @@ Prescriptions: {self.__prescriptions}\n'''
         '''
         Returns the id attribute
 
-        :return: id of the patient
-        :rtype: int
+        : return: id of the patient
+        : rtype: int
         '''
         return self.__id
 
@@ -91,8 +96,8 @@ Prescriptions: {self.__prescriptions}\n'''
         '''
         Sets the id attribute
 
-        :param id: id of the patient
-        :type id: int
+        : param id: id of the patient
+        : type id: int
         '''
         self.__id = id
 
@@ -101,7 +106,7 @@ Prescriptions: {self.__prescriptions}\n'''
         '''
         Returns the vital_signs attribute
 
-        :return: vital signs of the patient
-        :rtype: VitalSigns
+        : return: vital signs of the patient
+        : rtype: VitalSigns
         '''
         return self.__vital_signs
