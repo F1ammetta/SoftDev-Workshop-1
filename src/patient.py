@@ -29,7 +29,12 @@ class Patient():
         :return: string representation of the patient
         :rtype: str
         '''
-        return f'Patient: {self.__name}'
+        return f'''Patient: {self.__name}
+Vital Signs: {self.__vital_signs}
+Evolution Notes: {self.__evolution_notes}
+Diagnostic Images: {self.__diagnostic_images}
+Lab Results: {self.__lab_results}
+Prescriptions: {self.__prescriptions}\n'''
 
     @ property
     def name(self):
