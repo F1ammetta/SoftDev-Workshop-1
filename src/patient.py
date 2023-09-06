@@ -5,7 +5,7 @@ from clinical import ClinicalRecords
 class Patient():
 
     def __init__(self, name: str = "", birthdate: str = "", id: int = 0,
-                 vital_signs: VitalSigns = VitalSigns(),
+                 vital_signs: VitalSigns = VitalSigns(), gender: str = "",
                  clinical_records: ClinicalRecords = ClinicalRecords(),
                  disease: str = ""):
         '''
@@ -19,6 +19,8 @@ class Patient():
         :type id: int
         :param vital_signs: vital signs of the patient
         :type vital_signs: VitalSigns
+        :param gender: gender of the patient
+        :type gender: str
         :param clinical_records: clinical records of the patient
         :type clinical_records: ClinicalRecords
         '''
@@ -28,6 +30,7 @@ class Patient():
         self.__vital_signs = vital_signs
         self.__clinical_records = clinical_records
         self.__disease = disease
+        self.__gender = gender
 
     def __str__(self):
         '''
@@ -37,6 +40,8 @@ class Patient():
         :rtype: str
         '''
         return f'''Patient: {self.__name}
+Gender: {self.__gender}
+id: {self.__id}
 Disease: {self.__disease}
 Vital Signs: {self.__vital_signs}
 Evolution Notes: {self.__clinical_records.evolution_notes}
@@ -63,6 +68,16 @@ Prescriptions: {self.__clinical_records.prescriptions}'''
         : type name: str
         '''
         self.__name = name
+
+    @ property
+    def gender(self):
+        '''
+        Returns gender of the patient
+
+        : return: gender of the patient
+        : rtype: str
+        '''
+        return self.__gender
 
     @ property
     def birthdate(self):
