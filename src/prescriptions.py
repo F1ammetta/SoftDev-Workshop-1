@@ -10,9 +10,11 @@ class Prescriptions():
         med = {'name': name, 'prescription': prescription}
         self.prescriptions.append(med)
 
-    def print(self):
-        for prescription, i in enumerate(self.prescriptions):
-            print(f'{i}: {prescription}')
+    def __str__(self):
+        str = ''
+        for prescription in self.prescriptions:
+            str += f'{prescription["name"]}: {prescription["prescription"]}\n'
+        return str
 
     def remove(self):
         print('Remove prescriptions')

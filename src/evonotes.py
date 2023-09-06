@@ -3,6 +3,9 @@ class EvoNotes:
         self.notes = []
 
     def add(self):
+        '''
+        Add notes
+        '''
         print('Add notes')
         print('--------------------')
         date = input('enter date: ')
@@ -11,6 +14,14 @@ class EvoNotes:
         notes = {'date': date, 'note': note, 'state': state}
         self.notes.append(notes)
 
-    def print(self):
+    def get_last(self):
+        '''
+        Returns most recent note
+        '''
+        return self.notes[-1]
+
+    def __str__(self):
+        str = ''
         for note in self.notes:
-            print(note)
+            str += f"{note['date']} {note['note']} {note['state']}\n"
+        return str

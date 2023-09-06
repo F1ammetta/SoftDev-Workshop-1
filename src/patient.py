@@ -6,7 +6,8 @@ class Patient():
 
     def __init__(self, name: str = "", birthdate: str = "", id: int = 0,
                  vital_signs: VitalSigns = VitalSigns(),
-                 clinical_records: ClinicalRecords = ClinicalRecords()):
+                 clinical_records: ClinicalRecords = ClinicalRecords(),
+                 disease: str = ""):
         '''
         Constructor of the Patient class
 
@@ -26,6 +27,7 @@ class Patient():
         self.__id = id
         self.__vital_signs = vital_signs
         self.__clinical_records = clinical_records
+        self.__disease = disease
 
     def __str__(self):
         '''
@@ -35,6 +37,7 @@ class Patient():
         :rtype: str
         '''
         return f'''Patient: {self.__name}
+Disease: {self.__disease}
 Vital Signs: {self.__vital_signs}
 Evolution Notes: {self.__clinical_records.evolution_notes}
 Lab Results: {self.__clinical_records.lab_results}
@@ -110,3 +113,23 @@ Prescriptions: {self.__clinical_records.prescriptions}'''
         : rtype: VitalSigns
         '''
         return self.__vital_signs
+
+    @ property
+    def clinical_records(self):
+        '''
+        Returns the clinical_records attribute
+
+        : return: clinical records of the patient
+        : rtype: ClinicalRecords
+        '''
+        return self.__clinical_records
+
+    @ property
+    def disease(self):
+        '''
+        Returns the disease attribute
+
+        : return: disease of the patient
+        : rtype: str
+        '''
+        return self.__disease

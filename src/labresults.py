@@ -11,9 +11,11 @@ class LabResults:
         lab = {'procedure': procedure, 'result': result, 'date': date}
         self.results.append(lab)
 
-    def print(self):
+    def __str__(self):
+        str = ''
         for lab in self.results:
-            print(lab)
+            str += f"{lab['procedure']} {lab['result']} {lab['date']}\n"
+        return str
 
     def remove(self):
         print('Remove lab results')

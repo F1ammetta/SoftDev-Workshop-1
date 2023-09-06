@@ -19,6 +19,8 @@ class ClinicalRecords():
         :type diagnostic_images: DiagnosticImages
         :param lab_results: lab results of the patient
         :type lab_results: LabResults
+        :param prescriptions: prescriptions of the patient
+        :type prescriptions: Prescriptions
         '''
         self.__evolution_notes = evolution_notes
         self.__diagnostic_images = diagnostic_images
@@ -55,6 +57,7 @@ class ClinicalRecords():
         '''
         return self.__lab_results
 
+    @ property
     def prescriptions(self):
         '''
         Returns the prescriptions attribute
